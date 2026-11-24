@@ -1,0 +1,9 @@
+<?php
+require_once __DIR__.'/config/functions.php';
+$pageTitle='Projects';
+$projects=$pdo->query("SELECT * FROM projects WHERE is_published=1 ORDER BY sort_order,id DESC")->fetchAll();
+include __DIR__.'/includes/header.php';
+?>
+<section class="inner-hero"><div class="container"><span class="eyebrow">SELECTED WORK · BUILDING WITH PURPOSE</span><h1>My <b>Projects</b></h1><p>Building innovative digital solutions. Explore my software development and technology projects, including the tools used and the problem each project aims to solve.</p><a class="btn btn-accent" href="https://github.com/merikebu955" target="_blank" rel="noopener">Explore my GitHub <i class="fa-brands fa-github ms-2"></i></a></div></section>
+<section class="section"><div class="container"><div class="row g-4"><?php foreach($projects as $p): ?><div class="col-md-6 col-lg-4"><article class="content-card"><div class="card-icon"><i class="fa-solid fa-code"></i></div><span class="meta-line">PROJECT · <?=e($p['technologies'])?></span><h3 class="mt-3"><?=e($p['title'])?></h3><p><?=e($p['description'])?></p><a class="text-link" href="<?=e($p['project_url'] ?: 'https://github.com/merikebu955')?>" target="_blank" rel="noopener">View on GitHub <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a></article></div><?php endforeach; ?></div><div class="content-card text-center mt-5"><h2>Have a project idea?</h2><p>Let's collaborate and build innovative solutions.</p><a class="btn btn-accent" href="<?=BASE_URL?>/contact-page.php">Start a conversation <i class="fa-solid fa-arrow-right ms-2"></i></a></div></div></section>
+<?php include __DIR__.'/includes/footer.php'; ?>

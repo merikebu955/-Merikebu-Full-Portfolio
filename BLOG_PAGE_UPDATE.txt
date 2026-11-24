@@ -1,0 +1,49 @@
+MERIKEBU PORTFOLIO — BLOG PAGE UPDATE
+
+Files updated:
+- blog.php
+  * New responsive blog landing page.
+  * Topic/category filter buttons.
+  * Live article search.
+  * Sort by newest, oldest, and title.
+  * Reset filters and empty-result state.
+  * Article cards with reading time and share action.
+  * Links to article details, contact, YouTube, LinkedIn, GitHub, and X.
+
+- blog-post.php
+  * Redesigned article reading page.
+  * Safe output escaping for article content.
+  * Reading progress indicator.
+  * Share, copy-link, and print controls.
+  * Related articles from the same category.
+  * Helpful 404 state for missing/unpublished articles.
+
+- assets/css/style.css
+  * Responsive visual design for blog and article pages.
+  * Mobile/tablet layouts and print styling.
+
+SETUP
+1. Extract this ZIP into C:\xampp\htdocs\ (replace the existing project files when prompted).
+2. Start Apache and MySQL in XAMPP.
+3. Open phpMyAdmin and select the merikebu_portfolio database.
+4. If you have not already installed the blog tables, import database_upgrade.sql.
+   This creates the blog_posts table and inserts example starter articles only when
+   their slugs do not already exist.
+5. Check config/config.php and ensure BASE_URL and database credentials match your folder.
+6. Visit:
+   http://localhost/Merikebu_Full_Portfolio/blog.php
+
+ADD OR EDIT ARTICLES
+- Sign in to the portfolio admin panel.
+- Open the Blog_posts tab.
+- Add or edit the title, unique slug, excerpt, content, category, cover image, and
+  published status.
+- Publish the article to make it visible on the public Blog page.
+
+FUNCTIONALITY NOTES
+- Category filters, search, sort, reset, share, copy link, print, article links,
+  related article links, social links, and navigation are connected.
+- Browser-native share is used where supported; otherwise the page copies the link
+  or presents a copy prompt.
+- The PHP files passed PHP syntax checks. Database and browser behavior should be
+  verified on the local XAMPP setup.

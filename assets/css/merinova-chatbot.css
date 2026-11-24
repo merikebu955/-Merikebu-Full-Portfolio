@@ -1,0 +1,188 @@
+#merinova-chatbot {
+  font-family: Arial, sans-serif;
+}
+
+.merinova-chat-open {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 22px;
+  border: none;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #0755db, #00a6ff);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0, 90, 220, 0.3);
+}
+
+.chat-robot {
+  font-size: 22px;
+}
+
+.merinova-chat-window {
+  position: fixed;
+  right: 25px;
+  bottom: 95px;
+  z-index: 9999;
+  width: 360px;
+  height: 500px;
+  max-height: calc(100vh - 120px);
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+}
+
+.merinova-chat-window[hidden] {
+  display: none;
+}
+
+.merinova-chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px;
+  background: linear-gradient(135deg, #073b9a, #087cf0);
+  color: white;
+}
+
+.merinova-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.merinova-brand strong,
+.merinova-brand small {
+  display: block;
+}
+
+.merinova-brand small {
+  margin-top: 5px;
+  color: #dcecff;
+  font-size: 12px;
+}
+
+.merinova-avatar {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: white;
+  color: #0755db;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.merinova-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.merinova-messages {
+  flex: 1;
+  padding: 17px;
+  overflow-y: auto;
+  background: #f5f8fc;
+}
+
+.merinova-message {
+  max-width: 85%;
+  margin-bottom: 13px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.bot-message {
+  background: white;
+  color: #26364a;
+  border: 1px solid #e5eaf2;
+  border-bottom-left-radius: 3px;
+}
+
+.user-message {
+  margin-left: auto;
+  background: #075ddd;
+  color: white;
+  border-bottom-right-radius: 3px;
+}
+
+.merinova-status {
+  padding: 0 15px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.merinova-chat-form {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #e5eaf2;
+}
+
+.merinova-chat-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #d8e0eb;
+  border-radius: 25px;
+  outline: none;
+}
+
+.merinova-chat-form input:focus {
+  border-color: #087cf0;
+}
+
+.merinova-chat-form button {
+  width: 43px;
+  height: 43px;
+  border: none;
+  border-radius: 50%;
+  background: #075ddd;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.merinova-chat-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.merinova-chat-footer {
+  padding: 8px;
+  text-align: center;
+  color: #8793a4;
+  font-size: 10px;
+  background: #fff;
+}
+
+@media (max-width: 480px) {
+  .merinova-chat-window {
+    right: 10px;
+    bottom: 85px;
+    width: calc(100% - 20px);
+    height: min(500px, calc(100vh - 110px));
+  }
+
+  .merinova-chat-open {
+    right: 15px;
+    bottom: 15px;
+  }
+}

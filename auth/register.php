@@ -1,0 +1,9 @@
+<?php
+require_once __DIR__.'/../config/functions.php'; $pageTitle='Create account'; $error='';
+if($_SERVER['REQUEST_METHOD']==='POST'){csrf_check();$name=trim($_POST['name']??'');$email=trim($_POST['email']??'');$password=$_POST['password']??'';$confirm=$_POST['confirm']??'';
+if($name===''||!filter_var($email,FILTER_VALIDATE_EMAIL)||strlen($password)<8||$password!==$confirm)$error='Enter a valid name/email. Passwords must match and contain at least 8 characters.';
+else{$q=$pdo->prepare('SELECT id FROM users WHERE email=?');$q->execute([$email]);if($q->fetch())$error='That email is already registered.';else{$q=$pdo->prepare("INSERT INTO users(name,email,password_hash,role,created_at) VALUES(?,?,?,'user',NOW())");$q->execute([$name,$email,password_hash($password,PASSWORD_DEFAULT)]);$_SESSION['user_id']=(int)$pdo->lastInsertId();$_SESSION['user_name']=$name;$_SESSION['user_email']=$email;$_SESSION['role']='user';go('/user/dashboard.php');}}}
+include __DIR__.'/../includes/header.php'; ?>
+<section class="auth-section"><div class="auth-card"><h2>Create your account</h2><p class="muted">Register as a portfolio visitor/member.</p><?php if($error):?><div class="alert alert-danger"><?=e($error)?></div><?php endif;?>
+<form method="post"><input type="hidden" name="csrf" value="<?=e(csrf_token())?>"><label>Full name</label><input class="form-control mb-3" name="name" required maxlength="100"><label>Email</label><input class="form-control mb-3" type="email" name="email" required><label>Password</label><input class="form-control mb-3" type="password" name="password" minlength="8" required><label>Confirm password</label><input class="form-control mb-3" type="password" name="confirm" minlength="8" required><button class="btn btn-accent w-100">Create account</button></form><p class="mt-3 mb-0">Already registered? <a href="login.php">Login</a></p></div></section>
+<?php include __DIR__.'/../includes/footer.php'; ?>

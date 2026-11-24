@@ -1,0 +1,20 @@
+PROFESSIONAL JOURNEY PAGE UPDATE
+
+Updated file:
+- experience.php: expanded professional journey page with education, development skills,
+  AI interests, verified milestones supplied in the conversation, Merinova TechVerse,
+  community impact, future goals, and professional identity.
+- assets/css/style.css: responsive styles for the new journey sections.
+
+INSTALLATION
+1. Extract the complete Merikebu_Full_Portfolio folder into:
+   C:\xampp\htdocs\
+2. Import database.sql into phpMyAdmin (and database_upgrade.sql only if required by
+   the original project instructions).
+3. Check config/config.php and set DB_NAME, DB_USER, DB_PASS, and BASE_URL to match
+   your local setup.
+4. Open:
+   http://localhost/Merikebu_Full_Portfolio/experience.php
+
+The PHP page passed PHP syntax validation. Database-dependent features still require
+your local MySQL database and original project setup.

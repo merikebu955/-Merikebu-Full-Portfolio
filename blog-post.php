@@ -1,0 +1,6 @@
+<?php
+require_once __DIR__.'/config/functions.php';$slug=trim($_GET['slug']??'');$q=$pdo->prepare('SELECT * FROM blog_posts WHERE slug=? AND published=1 LIMIT 1');$q->execute([$slug]);$post=$q->fetch();if(!$post){http_response_code(404);$pageTitle='Article not found';}else{$pageTitle=$post['title'];}
+include __DIR__.'/includes/header.php';?>
+<section class="inner-hero"><div class="container"><a class="text-link" href="<?=BASE_URL?>/blog.php"><i class="fa-solid fa-arrow-left me-2"></i>All articles</a><?php if($post):?><div class="mt-4"><span class="eyebrow"><?=e($post['category'])?> · <?=date('F j, Y',strtotime($post['published_at']))?></span><h1><?=e($post['title'])?></h1><p><?=e($post['excerpt'])?></p></div><?php else:?><h1>Article <b>not found</b></h1><p>This article may have been unpublished or the link may be incorrect.</p><?php endif;?></div></section>
+<?php if($post):?><section class="section"><div class="container"><article class="article-body"><div class="detail-prose"><?=nl2br(e($post['content']))?></div><hr class="my-5"><a class="btn btn-outline-light" href="<?=BASE_URL?>/blog.php">Back to all articles</a></article></div></section><?php endif;?>
+<?php include __DIR__.'/includes/footer.php';?>

@@ -1,0 +1,13 @@
+CERTIFICATES PAGE UPDATE
+========================
+
+1. Extract this project into C:\xampp\htdocs\Merikebu_Full_Portfolio.
+2. Start Apache and MySQL in XAMPP.
+3. Check config/config.php for BASE_URL and database credentials.
+4. If the certificates table is missing, import database_upgrade.sql in phpMyAdmin.
+5. Open http://localhost/Merikebu_Full_Portfolio/certificates.php
+6. Sign in as administrator, open Admin Dashboard > Certificates, then add/edit a record.
+7. Add a real credential URL and/or upload a certificate scan. Supported: PDF, JPG, PNG, WebP, maximum 8MB.
+8. The public page provides category filters and working View certificate / Credential link actions.
+
+Only publish certificates you are authorized to share. Enter accurate issuers, dates and links.
