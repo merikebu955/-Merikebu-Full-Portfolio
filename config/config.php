@@ -2,14 +2,22 @@
 <?php
 declare(strict_types=1);
 
-$host = 'merikebugashu.pro.et';
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+define('APP_NAME', 'Merikebu Portfolio');
+define('BASE_URL', '/Merikebu_Full_Portfolio');
+
+// Database connection
+$host = 'localhost';
 $dbname = 'merikebu_portfolio';
-$username = 'YOUR_DATABASE_USERNAME';
-$password = 'YOUR_DATABASE_PASSWORD';
+$username = 'root';
+$password = '';
 
 try {
     $pdo = new PDO(
-        "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
+        "mysql:host={$host};dbname={$dbname};charset=utf8mb4",
         $username,
         $password,
         [
@@ -18,8 +26,7 @@ try {
             PDO::ATTR_EMULATE_PREPARES => false
         ]
     );
-
 } catch (PDOException $e) {
-    error_log('Database error: ' . $e->getMessage());
-    die('Database connection failed. Check your database settings.');
+    error_log($e->getMessage());
+    die('Database connection failed.');
 }
