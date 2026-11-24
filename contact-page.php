@@ -15,7 +15,7 @@ require_once __DIR__.'/includes/header.php';
   <p class="muted">I’m open to internships, junior developer roles, freelance work, collaborations and conversations about technology.</p>
   <a class="contact-detail" href="mailto:merikebgashu@gmail.com"><span class="contact-icon"><i class="fa-solid fa-envelope"></i></span><span><small>EMAIL</small><strong>merikebgashu@gmail.com</strong></span><i class="fa-solid fa-arrow-up-right-from-square ms-auto"></i></a>
 
-  <a class="contact-detail" href="https://t.me/MerinovaComputer" target="_blank" rel="noopener"><span class="contact-icon"><i class="fa-brands fa-telegram"></i></span><span><small>TELEGRAM</small><strong>@MerinovaComputer</strong></span><i class="fa-solid fa-arrow-up-right-from-square ms-auto"></i></a>
+  <a class="contact-detail" href="https://t.me/MerinovaComputer" target="_blank" rel="noopener"><span class="contact-icon"><i class="fa-brands fa-telegram"></i></span><span><small>TELEGRAM</small><strong>@merinovacomputer</strong></span><i class="fa-solid fa-arrow-up-right-from-square ms-auto"></i></a>
   <div class="contact-socials">
    <a aria-label="GitHub" href="https://github.com/merikebu955" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
    <a aria-label="LinkedIn" href="https://www.linkedin.com/in/merikebu-gashu-379061433" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
