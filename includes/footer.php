@@ -1,2 +1,2 @@
-</main><footer class="footer py-4"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><span>© <?=date('Y')?> Merikebu Gashu Mengesha. All rights reserved.</span><span>Built with PHP · MySQL · Bootstrap 5</span></div></footer>
+</main><footer class="footer py-4"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><span>© <?=date('Y')?> Merikebu Gashu Mengesha. All rights reserved.</span><span>I Don't Just Write Code. I Build the Future.</span></div></footer>
 <script>window.APP_BASE=<?=json_encode(BASE_URL)?>;</script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="<?=BASE_URL?>/assets/js/app.js"></script></body></html>
